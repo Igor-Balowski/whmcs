@@ -104,9 +104,9 @@ function namesilo_transactionCall($callType, $call, $params)
 
                 $status = (string)$xml->reply->locked;
                 if ($status == 'Yes') {
-                    $response = 'locked';
+                    $response['error'] = 'locked';
                 } elseif ($status == 'No') {
-                    $response = 'unlocked';
+                    $response['error'] = 'unlocked';
                 } else {
                     $response['error'] = 'There was a problem';
                 }
